@@ -533,6 +533,231 @@ footer .copyright {
 
 /* cart page */
 
+/* cart page */
+
+/* Cart table base */
+#cart table{
+  width:100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(13,38,63,0.06);
+}
+
+#cart thead td{
+  background: #f7f9fb;
+  color: #222;
+  font-weight: 700;
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #e6e9ee;
+}
+
+#cart tbody td{
+  padding: 14px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f3f6;
+  color: #333;
+}
+
+#cart tbody tr:nth-child(even){
+  background: #fbfcfd;
+}
+
+#cart img{
+  width: 140px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#cart input[type="number"]{
+  width: 72px;
+  padding: 8px 10px;
+  border: 1px solid #e6e9ee;
+  border-radius: 6px;
+  text-align: center;
+  background: #fff;
+}
+
+#cart td .fa-times-circle{
+  color: #e25b5b;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform .15s ease, color .12s ease;
+}
+
+#page-header{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+background-image: url(./img/hero4.jpg);
+}
+
+
+
+#cart td .fa-times-circle:hover{
+  transform: scale(1.08);
+  color: #c23e3e;
+}
+
+/* highlight subtotal cell */
+.subtotal{
+  font-weight: 700;
+  color: #088178;
+}
+
+/* small helper for quantity area */
+.qty-wrap{ display:flex; align-items:center; gap:8px; }
+
+/* Responsive: transform table into stacked cards on narrow viewports */
+@media (max-width: 768px) {
+  .section-p1 { padding: 20px; }
+
+  #cart table,
+  #cart thead,
+  #cart tbody,
+  #cart td,
+  #cart tr{ display: block; }
+
+  #cart thead{ display: none; }
+
+  #cart tbody tr{
+    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(13,38,63,0.04);
+    padding: 12px;
+    background: #fff;
+  }
+
+  #cart tbody td{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    align-items: center;
+  }
+
+  #cart tbody td img{ width: 64px; height: 64px; margin-right: 12px; }
+
+  /* first cell (remove/icon + image) layout */
+  #cart tbody td:first-child{ justify-content:flex-start; }
+}
+
+/* Cart controls: coupon and subtotal box */
+#cart-add{
+  display:flex;
+  gap:30px;
+  align-items:flex-start;
+  margin-top:28px;
+}
+
+#coupon{
+  flex:1;
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+  box-shadow: 0 8px 24px rgba(13,38,63,0.04);
+  border: 1px solid #eef2f5;
+}
+
+#coupon h3{ margin-bottom:12px; }
+
+#coupon > div{ display:flex; gap:10px; }
+
+#coupon input[type="text"]{
+  flex:1;
+  padding:12px 14px;
+  border:1px solid #e6e9ee;
+  border-radius:6px;
+  outline:none;
+  width: 60px;
+  margin-right: 10px;
+}
+
+#coupon button.normal{
+  padding:12px 18px;
+  background:#088178;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+#coupon button.normal:hover{ 
+  opacity:0.95;
+  background-color: #000;
+ }
+
+
+#subtotal{
+  width:360px;
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+  box-shadow: 0 8px 24px rgba(13,38,63,0.04);
+  border: 1px solid #eef2f5;
+}
+
+#subtotal table td{
+  width: 50px;
+  border: 1px solid #f1f3f6;
+  padding: 10px;
+  font-size: 13px;
+}
+#coupon input{
+  padding: 10px 20px;
+  outline: none;
+  width: 60px;
+  margin-right: 10px;
+  border: 1px solid #088178;
+}
+#coupon button,
+#subtotal button{
+  padding: 10px 20px;
+  background: #088178;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#subtotal h3{ margin-bottom:12px; }
+
+#subtotal table{ width:100%; border-collapse: collapse; }
+
+#subtotal td{ padding:8px 0; color:#333; }
+
+#subtotal tr td:first-child{ color:#6b6b6b; }
+
+#subtotal tr:last-child td{ font-weight:800; color:#088178; font-size:18px; }
+
+@media (max-width: 768px) {
+  #cart-add{ flex-direction:column-reverse; gap:16px; }
+  #subtotal{ width:100%; }
+  #coupon > div{ flex-direction:column; }
+  #coupon input[type="text"]{ width:100%; }
+  #coupon button.normal{ width:100%; }
+}
+
+#header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background-color: #E3E6F3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+#subtotal.normal.button:hover{
+  background-color: #000;
+}
+
 
 
 /* Start Media Query */
@@ -551,5 +776,7 @@ footer .copyright {
     background-color: #E3E6F3;
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
   }
+
+
 }
 

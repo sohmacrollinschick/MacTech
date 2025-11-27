@@ -466,7 +466,24 @@
             </div>
         </footer>
 
-        <script src="script.js"></script>
+        <script src="script.js">
+            const navbar = document.getElementById('navbar');
+const header = document.getElementById('header');
+
+// create hamburger icon
+const mobileMenu = document.createElement('div');
+mobileMenu.id = 'mobile';
+mobileMenu.innerHTML = '<i class="fas fa-bars"></i>';
+header.appendChild(mobileMenu);
+
+// toggle open/close
+mobileMenu.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});
+
+
+
+        </script>
     </body>
 
 </html>
